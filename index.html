@@ -1,573 +1,1322 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <title>Hussain Mahkareem | Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #111827;
-            /* Dark background, replacing light gray */
-            scroll-behavior: smooth;
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #111827;
+        /* Dark background, replacing light gray */
+        scroll-behavior: smooth;
+      }
+
+      .glassy-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4),
+          0 2px 4px -2px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .glassy-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5),
+          0 4px 6px -4px rgba(0, 0, 0, 0.3);
+      }
+
+      .skill-tag {
+        animation: fadeIn 0.5s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(5px);
         }
 
-        .glassy-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
+      }
 
-        .glassy-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-        }
+      /* Style for logos */
+      .logo {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        border-radius: 50%;
+        margin-right: 1rem;
+        flex-shrink: 0;
+      }
 
-        .skill-tag {
-            animation: fadeIn 0.5s ease-out;
-        }
+      /* Specific style for education logos if needed */
+      .education-logo {
+        width: 50px;
+        /* or any size you prefer */
+        height: 50px;
+        object-fit: contain;
+        margin-right: 1rem;
+      }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(5px);
-            }
+      /* Style for certification and volunteer logos */
+      .cert-logo {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+      /* Custom colors for skill tags */
+      .bg-random-1 {
+        background-color: #059669;
+      }
 
-        /* Style for logos */
-        .logo {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            border-radius: 50%;
-            margin-right: 1rem;
-            flex-shrink: 0;
-        }
+      /* Emerald */
+      .text-random-1 {
+        color: #d1fae5;
+      }
 
-        /* Specific style for education logos if needed */
-        .education-logo {
-            width: 50px;
-            /* or any size you prefer */
-            height: 50px;
-            object-fit: contain;
-            margin-right: 1rem;
-        }
+      .bg-random-2 {
+        background-color: #d946ef;
+      }
 
-        /* Style for certification and volunteer logos */
-        .cert-logo {
-            width: 32px;
-            height: 32px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
+      /* Fuchsia */
+      .text-random-2 {
+        color: #fae8ff;
+      }
 
-        /* Custom colors for skill tags */
-        .bg-random-1 {
-            background-color: #059669;
-        }
+      .bg-random-3 {
+        background-color: #06b6d4;
+      }
 
-        /* Emerald */
-        .text-random-1 {
-            color: #D1FAE5;
-        }
+      /* Cyan */
+      .text-random-3 {
+        color: #e0f7fa;
+      }
 
-        .bg-random-2 {
-            background-color: #D946EF;
-        }
+      .bg-random-4 {
+        background-color: #f97316;
+      }
 
-        /* Fuchsia */
-        .text-random-2 {
-            color: #FAE8FF;
-        }
+      /* Orange */
+      .text-random-4 {
+        color: #fff7ed;
+      }
 
-        .bg-random-3 {
-            background-color: #06B6D4;
-        }
+      /* ================================
+               GREEN / WHITE / BLACK THEME
+               Primary green: #1ab0b3
+               Secondary green: #006666
+            ================================= */
 
-        /* Cyan */
-        .text-random-3 {
-            color: #E0F7FA;
-        }
+      /* Base colors */
+      body {
+        background-color: #0b0f14 !important;
+        color: #ffffff;
+      }
 
-        .bg-random-4 {
-            background-color: #F97316;
-        }
+      /* Main section backgrounds */
+      .bg-gray-800 {
+        background-color: #0f1720 !important;
+      }
 
-        /* Orange */
-        .text-random-4 {
-            color: #FFF7ED;
-        }
+      .bg-gray-700 {
+        background-color: #111827 !important;
+      }
+
+      /* Glass cards */
+      .glassy-card {
+        background: rgba(26, 176, 179, 0.08);
+        border: 1px solid rgba(26, 176, 179, 0.25);
+      }
+
+      /* Primary green text */
+      .text-green-400,
+      .text-green-500 {
+        color: #1ab0b3 !important;
+      }
+
+      /* Hover green */
+      .hover\:text-green-400:hover,
+      .hover\:text-green-600:hover {
+        color: #006666 !important;
+      }
+
+      /* Borders */
+      .border-green-400,
+      .border-green-500 {
+        border-color: #1ab0b3 !important;
+      }
+
+      .border-green-300 {
+        border-color: #006666 !important;
+      }
+
+      .border-gray-700 {
+        border-color: rgba(255, 255, 255, 0.15) !important;
+      }
+
+      /* Timeline dots */
+      .bg-green-500 {
+        background-color: #1ab0b3 !important;
+      }
+
+      .bg-green-300 {
+        background-color: #006666 !important;
+      }
+
+      /* Navigation bar background */
+      nav {
+        background-color: #0f1720 !important;
+      }
+
+      /* Skill tags – Primary */
+      .bg-random-1 {
+        background-color: #1ab0b3 !important;
+      }
+      .text-random-1 {
+        color: #ffffff !important;
+      }
+
+      /* Skill tags – Secondary */
+      .bg-random-2,
+      .bg-random-3,
+      .bg-random-4 {
+        background-color: #006666 !important;
+      }
+
+      .text-random-2,
+      .text-random-3,
+      .text-random-4 {
+        color: #ffffff !important;
+      }
+
+      /* Footer */
+      footer {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* ================================
+         GREEN / WHITE / BLACK THEME (LIGHT)
+         Primary green: #1ab0b3
+         Secondary green: #006666
+      ================================ */
+
+      /* Base colors */
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+      }
+
+      /* Make Tailwind gray text readable on white */
+      .text-gray-100,
+      .text-gray-200,
+      .text-gray-300,
+      .text-gray-400,
+      .text-gray-500 {
+        color: #111827 !important; /* near-black */
+      }
+
+      /* Main section backgrounds (previously dark) */
+      .bg-gray-800 {
+        background-color: #ffffff !important;
+      }
+
+      .bg-gray-700 {
+        background-color: #f3f4f6 !important; /* light gray */
+      }
+
+      /* Glass cards (light glass effect) */
+      .glassy-card {
+        background: rgba(255, 255, 255, 0.85) !important;
+        border: 1px solid rgba(26, 176, 179, 0.25) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+      }
+
+      /* Primary green text */
+      .text-green-400,
+      .text-green-500 {
+        color: #1ab0b3 !important;
+      }
+
+      /* Hover green */
+      .hover\:text-green-400:hover,
+      .hover\:text-green-600:hover {
+        color: #006666 !important;
+      }
+
+      /* Borders */
+      .border-green-400,
+      .border-green-500 {
+        border-color: #1ab0b3 !important;
+      }
+
+      .border-green-300 {
+        border-color: #006666 !important;
+      }
+
+      .border-gray-700 {
+        border-color: rgba(0, 0, 0, 0.12) !important;
+      }
+
+      /* Timeline dots */
+      .bg-green-500 {
+        background-color: #1ab0b3 !important;
+      }
+
+      .bg-green-300 {
+        background-color: #006666 !important;
+      }
+
+      /* Navigation bar */
+      nav.bg-gray-800 {
+        background-color: #ffffff !important;
+      }
+
+      nav {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+      }
+
+      /* Force headings to black on light */
+      h1,
+      h2,
+      h3,
+      h4,
+      .text-white {
+        color: #000000 !important;
+      }
+
+      /* Skill tags – Primary */
+      .bg-random-1 {
+        background-color: #1ab0b3 !important;
+      }
+      .text-random-1 {
+        color: #ffffff !important;
+      }
+
+      /* Skill tags – Secondary */
+      .bg-random-2,
+      .bg-random-3,
+      .bg-random-4 {
+        background-color: #006666 !important;
+      }
+      .text-random-2,
+      .text-random-3,
+      .text-random-4 {
+        color: #ffffff !important;
+      }
+
+      /* Footer */
+      footer {
+        color: rgba(0, 0, 0, 0.6) !important;
+      }
+      /* ================================
+         Fix Experience timeline (line + dot)
+         Makes it clean for WHITE background
+      ================================ */
+
+      /* Make the vertical line thinner + softer */
+      #experience .border-l-4 {
+        border-left-width: 2px !important;
+        padding-left: 1rem !important;
+      }
+
+      /* Primary experience items (border-green-500) */
+      #experience .border-green-500 {
+        border-left-color: rgba(
+          26,
+          176,
+          179,
+          0.45
+        ) !important; /* #1ab0b3 but lighter */
+      }
+
+      /* Secondary experience items (border-green-300) */
+      #experience .border-green-300 {
+        border-left-color: rgba(
+          0,
+          102,
+          102,
+          0.35
+        ) !important; /* #006666 but lighter */
+      }
+
+      /* Fix the timeline dot: smaller + white ring + subtle glow */
+      #experience .absolute.-left-2.top-0.w-4.h-4 {
+        width: 12px !important;
+        height: 12px !important;
+        left: -7px !important; /* align with 2px line */
+        border-radius: 9999px !important;
+
+        border: 2px solid #ffffff !important; /* white ring */
+        box-shadow: 0 0 0 4px rgba(26, 176, 179, 0.12) !important; /* soft glow */
+      }
+
+      /* Ensure dot colors match your palette */
+      #experience .bg-green-500 {
+        background-color: #1ab0b3 !important;
+      }
+
+      #experience .bg-green-300 {
+        background-color: #006666 !important;
+      }
+      /* ================================
+         Increase Experience logos size
+      ================================ */
+
+      /* Experience section logos */
+      #experience .logo {
+        width: 56px !important;
+        height: 56px !important;
+        margin-right: 1.25rem !important;
+      }
+
+      /* Slightly align logo vertically with title */
+      #experience .logo {
+        margin-top: 2px;
+      }
+      /* ================================
+         Increase Certification logos size
+      ================================ */
+
+      /* Certification section logos */
+      #certifications .cert-logo {
+        width: 44px !important;
+        height: 44px !important;
+        margin-right: 1rem !important;
+        border-radius: 8px !important; /* less round, more professional */
+      }
+
+      /* Improve alignment inside list items */
+      #certifications li {
+        align-items: center !important;
+      }
+      /* ================================
+         INVERTED LAYOUT (AS REQUESTED)
+         Page = WHITE
+         Cards = LIGHT GREY
+      ================================ */
+
+      /* Page background */
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+      }
+
+      /* Cards background */
+      .bg-gray-800,
+      .bg-gray-700 {
+        background-color: #f3f4f6 !important; /* light grey cards */
+      }
+
+      /* Glass card cleanup */
+      .glassy-card {
+        background-color: #f3f4f6 !important;
+        border: 1px solid rgba(26, 176, 179, 0.18) !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
+      }
+
+      /* Navigation bar */
+      nav {
+        background-color: #ffffff !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+      }
+
+      /* Footer */
+      footer {
+        background-color: transparent !important;
+        color: rgba(0, 0, 0, 0.6) !important;
+      }
+
+      /* Text contrast fixes */
+      .text-white {
+        color: #000000 !important;
+      }
+
+      .text-gray-300,
+      .text-gray-400,
+      .text-gray-500 {
+        color: #374151 !important;
+      }
+      /* ================================
+         UNIFIED LOGO STYLE (CERT STYLE)
+      ================================ */
+
+      /* Apply same shape to ALL logos */
+      .logo,
+      .education-logo,
+      .cert-logo {
+        width: 44px !important;
+        height: 44px !important;
+        object-fit: contain !important;
+
+        border-radius: 8px !important; /* same as certifications */
+        background-color: #ffffff !important;
+
+        padding: 4px !important;
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+
+        flex-shrink: 0 !important;
+      }
+
+      /* Slightly bigger for Experience (optional hierarchy) */
+      #experience .logo {
+        width: 52px !important;
+        height: 52px !important;
+      }
+
+      /* Align logos nicely with text */
+      .logo,
+      .education-logo,
+      .cert-logo {
+        margin-right: 1rem !important;
+      }
+      /* ================================
+         UNIFIED LOGO SIZE & SHAPE
+         Same size as Experience logos
+      ================================ */
+
+      /* ALL logos: same size, same shape */
+      .logo,
+      .education-logo,
+      .cert-logo {
+        width: 52px !important;
+        height: 52px !important;
+
+        object-fit: contain !important;
+        flex-shrink: 0 !important;
+
+        /* Certification-style shape */
+        border-radius: 8px !important;
+        background-color: #ffffff !important;
+
+        padding: 4px !important;
+        margin-right: 1rem !important;
+
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+      }
+
+      /* Ensure list items align nicely */
+      #experience li,
+      #certifications li,
+      #education li {
+        align-items: center !important;
+      }
+      /* ================================
+         Fix certification logo visual size
+      ================================ */
+
+      /* Reduce padding ONLY for certifications */
+      #certifications .cert-logo {
+        padding: 2px !important;
+      }
+
+      /* Slight contrast boost */
+      #certifications .cert-logo {
+        background-color: #ffffff !important;
+      }
+
+      /* Optional: subtle scale to equalize visual weight */
+      #certifications .cert-logo img,
+      #certifications .cert-logo {
+        transform: scale(1.05);
+      }
+      /* ================================
+   SKILLS: Different green shades
+================================ */
+
+      /* Backend & Server */
+      #skills .bg-random-1 {
+        background-color: #1ab0b3 !important;
+        color: #ffffff !important;
+      }
+
+      /* Security & Maintenance */
+      #skills .bg-random-2 {
+        background-color: #006666 !important;
+        color: #ffffff !important;
+      }
+
+      /* Technical Support & Infrastructure */
+      #skills .bg-random-3 {
+        background-color: #6fd3cf !important;
+        color: #003333 !important;
+      }
+
+      /* Project & Process Management */
+      #skills .bg-random-4 {
+        background-color: #004f4f !important;
+        color: #ffffff !important;
+      }
+
+      /* Web & Software Development (reuse primary but lighter) */
+      #skills .bg-random-1:last-of-type {
+        background-color: #9be5e3 !important;
+        color: #003333 !important;
+      }
+
+      /* Improve consistency */
+      #skills .skill-tag {
+        font-weight: 500;
+        letter-spacing: 0.2px;
+      }
     </style>
-</head>
+  </head>
 
-<body class="text-gray-100">
+  <body class="text-gray-100">
     <nav class="sticky top-0 z-50 bg-gray-800 shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="#top"
-                    class="text-xl sm:text-2xl font-bold text-green-400 hover:text-green-600 transition duration-300 flex-shrink-0">H.M.</a>
-                <div class="flex space-x-2 sm:space-x-4 overflow-x-auto whitespace-nowrap">
-                    <a href="#experience"
-                        class="nav-link text-xs sm:text-sm font-medium text-gray-300 hover:text-green-400">Experience</a>
-                    <a href="#education"
-                        class="nav-link text-xs sm:text-sm font-medium text-gray-300 hover:text-green-400">Education</a>
-                    <a href="#certifications"
-                        class="nav-link text-xs sm:text-sm font-medium text-gray-300 hover:text-green-400">Certifications</a>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a
+            href="#top"
+            class="text-xl sm:text-2xl font-bold text-green-400 hover:text-green-600 transition duration-300 flex-shrink-0"
+            >H.M.</a
+          >
+          <div
+            class="flex space-x-2 sm:space-x-4 overflow-x-auto whitespace-nowrap"
+          >
+            <a
+              href="#experience"
+              class="nav-link text-xs sm:text-sm font-medium text-gray-300 hover:text-green-400"
+              >Experience</a
+            >
+            <a
+              href="#education"
+              class="nav-link text-xs sm:text-sm font-medium text-gray-300 hover:text-green-400"
+              >Education</a
+            >
+            <a
+              href="#certifications"
+              class="nav-link text-xs sm:text-sm font-medium text-gray-300 hover:text-green-400"
+              >Certifications</a
+            >
+          </div>
         </div>
+      </div>
     </nav>
 
     <div id="top" class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 pt-10">
-
-        <header class="bg-gray-800 p-6 md:p-10 rounded-xl mb-8 glassy-card">
-            <div class="flex flex-col gap-6 md:flex-row md:items-start justify-between">
-                <div class="flex items-center gap-6">
-                    <img src="Profile.jpg" alt="Hussain Mahkareem Profile Photo"
-                        class="w-24 h-24 rounded-full object-cover border-4 border-green-400 shadow-xl flex-shrink-0">
-                    <div>
-                        <h1 class="text-3xl sm:text-4xl font-extrabold text-white">HUSSAIN MAHKAREEM</h1>
-                        <p class="text-lg sm:text-xl font-medium text-green-400 mt-2"> Software Engineer | Google
-                            Certified IT Support Professional | Channel and Support Management | UX/UI Expert
-                        </p>
-                        <p class="text-base sm:text-lg text-gray-400 mt-1">Software Development | Programming | Agile
-                            Certified</p>
-                    </div>
+      <header class="bg-gray-800 p-6 md:p-10 rounded-xl mb-8 glassy-card">
+        <div
+          class="flex flex-col gap-6 md:flex-row md:items-start justify-between"
+        >
+          <div class="flex items-center gap-6">
+            <img
+              src="Profile.jpg"
+              alt="Hussain Mahkareem Profile Photo"
+              class="w-32 h-32 rounded-full object-cover border-4 border-green-400 shadow-xl flex-shrink-0"
+            />
+            <div>
+              <h1 class="text-3xl sm:text-4xl font-extrabold text-white">
+                HUSSAIN MAHKAREEM
+              </h1>
+              <p class="text-lg sm:text-xl font-medium text-green-400 mt-2">
+                Assistant Manager – Platform Management | Master's in CIS |
+                Software Engineer | Assistive Technology & Accessibility |
+                Lecturer at PAAET | Agile Certified
+              </p>
+              <div
+                class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-3 text-sm sm:text-base text-gray-600"
+              >
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-green-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                  <a
+                    href="tel:+96566080892"
+                    class="hover:text-green-400 transition"
+                  >
+                    +965 66080892
+                  </a>
                 </div>
 
-                <div class="mt-4 md:mt-0 md:text-right space-y-1 flex-shrink-0">
-                    <div class="flex items-center justify-start md:justify-end">
-                        <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                            </path>
-                        </svg>
-                        <a href="tel:+96566080892"
-                            class="text-sm sm:text-md text-gray-300 hover:text-green-400 transition">+965 66080892</a>
-                    </div>
-                    <div class="flex items-center justify-start md:justify-end">
-                        <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2-2a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V6z">
-                            </path>
-                        </svg>
-                        <a href="mailto:h.mahkareem@gmail.com"
-                            class="text-sm sm:text-md text-gray-300 hover:text-green-400 transition">h.mahkareem@gmail.com</a>
-                    </div>
-                    <div class="flex items-center justify-start md:justify-end">
-                        <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243m-4.243 4.243h8.486l4.243-4.243m-4.243-4.243l-4.243-4.243m0 0l-4.243 4.243m4.243 4.243v8.486m-4.243-4.243h8.486">
-                            </path>
-                        </svg>
-                        <span class="text-sm sm:text-md text-gray-300">Kuwait</span>
-                    </div>
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-green-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2-2a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V6z"
+                    />
+                  </svg>
+                  <a
+                    href="mailto:h.mahkareem@gmail.com"
+                    class="hover:text-green-400 transition"
+                  >
+                    h.mahkareem@gmail.com
+                  </a>
                 </div>
+
+                <div class="flex items-center gap-2">
+                  <svg
+                    class="w-4 h-4 text-green-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 2a10 10 0 100 20 10 10 0 000-20z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M2 12h20M12 2c2.5 3 2.5 15 0 20M12 2c-2.5 3-2.5 15 0 20"
+                    />
+                  </svg>
+                  <span>Kuwait</span>
+                </div>
+              </div>
             </div>
-        </header>
+          </div>
+        </div>
+      </header>
 
-        <section id="summary" class="bg-gray-800 p-6 md:p-8 rounded-xl mb-8 glassy-card">
-            <h2 class="text-xl sm:text-2xl font-bold text-white mb-4 border-b pb-2 border-gray-700 text-green-400">
-                Professional Summary</h2>
-            <p class="text-sm sm:text-base text-gray-300 leading-relaxed"> Results-driven **Assistant Manager -
-                Application Support** with a strong foundation in software engineering, front-end development, and
-                enterprise IT systems. Holding a degree in Software Engineering from the Rochester Institute of
-                Technology and certifications from Google and ICAgile, I bring a unique blend of technical expertise,
-                design thinking, and operational leadership. My career spans key roles in major Kuwaiti banks, where
-                I've led UX/UI initiatives, streamlined application support processes, and driven the adoption of
-                responsive digital solutions. Experienced in troubleshooting complex systems, leading cross-functional
-                projects, managing vendor relationships, and supporting mission-critical applications, I thrive at the
-                intersection of software development and IT service excellence. I am now seeking to further contribute
-                in an innovative environment that values reliability, continuous improvement.
-            </p>
-        </section>
+      <section
+        id="summary"
+        class="bg-gray-800 p-6 md:p-8 rounded-xl mb-8 glassy-card"
+      >
+        <h2
+          class="text-xl sm:text-2xl font-bold text-white mb-4 border-b pb-2 border-gray-700 text-green-400"
+        >
+          Professional Summary
+        </h2>
+        <p class="text-sm sm:text-base text-gray-300 leading-relaxed">
+          Results-driven Assistant Manager - Platform & Automation with a strong
+          background in software engineering, enterprise IT systems, and
+          inclusive digital design. Holds a Master’s in Computing Information
+          Systems from Kuwait University, with academic and applied work focused
+          on assistive technology for individuals with learning disabilities.
+          Brings hands-on experience supporting mission-critical banking
+          platforms, automation initiatives, and cross-functional system
+          delivery, with an emphasis on reliability, accessibility, and
+          user-centered design aligned with international accessibility
+          standards and Arabic-localized environments. Also serves as a
+          part-time lecturer at PAAET, delivering applied instruction in Server
+          Operating Systems and enterprise IT concepts.
+        </p>
+      </section>
 
-        <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 space-y-8">
-                <section id="experience" class="bg-gray-800 p-6 md:p-8 rounded-xl glassy-card">
-                    <h2
-                        class="text-xl sm:text-2xl font-bold text-white mb-6 border-b pb-2 border-gray-700 text-green-400">
-                        Experience</h2>
-                    <div class="mb-6 pb-4 border-l-4 border-green-500 pl-4 relative flex items-start">
-                        <img src="kib.png" alt="Kuwait International Bank Logo" class="logo">
-                        <div>
-                            <div class="absolute -left-2 top-0 w-4 h-4 bg-green-500 rounded-full"></div>
-                            <h3 class="text-base sm:text-xl font-semibold text-white">Assistant Manager - Application
-                                Support</h3>
-                            <p class="text-green-400 font-medium text-sm">Kuwait International Bank <span
-                                    class="text-gray-400 text-xs sm:text-sm font-normal">| 06/2025 - Present |
-                                    Kuwait</span></p>
-                            <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300 ml-4 text-sm">
-                                <li>Oversee daily support for core banking and digital applications, ensuring system
-                                    stability and quick resolution of incidents.</li>
-                                <li>Coordinate with vendors and internal teams to manage upgrades, patches, and
-                                    production issues.</li>
-                                <li>Lead root cause analysis and implement improvements to reduce recurring issues.</li>
-                                <li>Support new system rollouts and changes, ensuring smooth transitions and minimal
-                                    business disruption.</li>
-                                <li>Prepare performance reports and ensure compliance with ITIL practices and banking
-                                    standards.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="mb-6 pb-4 border-l-4 border-green-500 pl-4 relative flex items-start">
-                        <img src="PAAET.png" alt="PAAET Logo" class="logo">
-                        <div>
-                            <div class="absolute -left-2 top-0 w-4 h-4 bg-green-500 rounded-full"></div>
-                            <h3 class="text-base sm:text-xl font-semibold text-white">Part-Time Lecturer</h3>
-                            <p class="text-green-400 font-medium text-sm">The Public Authority for Applied Education and
-                                Training
-                                <span class="text-gray-400 text-xs 					sm:text-sm font-normal"> | 09/2025 -
-                                    12/2025 | Kuwait</span>
-                            </p>
-                            <p class="text-green-400 font-medium text-sm">Higher Institute for Communications and
-                                Navigation
-                                <span class="text-gray-400 text-xs 					sm:text-sm font-normal"> | Course: Server
-                                    Operating
-                                    Systems</span>
-                            </p>
-                            <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300 ml-4 text-sm">
-                                <li>Deliver theoretical and practical lectures on Windows Server 2019 administration,
-                                    file systems,
-                                    virtualization, and networking fundamentals.</li>
-                                <li>Design and evaluate lab exercises that simulate real-world IT infrastructure and
-                                    system management
-                                    scenarios.</li>
-                                <li>Guide students in troubleshooting, configuration, and server security best
-                                    practices.</li>
-                                <li>Integrate accessibility and inclusive learning methods to support students with
-                                    different learning
-                                    needs.
-                                </li>
-                                <li>Collaborate with the academic department to align course content with current
-                                    industry technologies and
-                                    certifications.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="mb-6 pb-4 border-l-4 border-green-300 pl-4 relative flex items-start">
-                        <img src="kib.png" alt="Kuwait International Bank Logo" class="logo">
-                        <div>
-                            <div class="absolute -left-2 top-0 w-4 h-4 bg-green-300 rounded-full"></div>
-                            <h3 class="text-base sm:text-xl font-semibold text-white">Channel and Support Engineer</h3>
-                            <p class="text-green-400 font-medium text-sm">Kuwait International Bank <span
-                                    class="text-gray-400 text-xs sm:text-sm font-normal">| 04/2023 - 05/2025 |
-                                    Kuwait</span></p>
-                            <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300 ml-4 text-sm">
-                                <li>Infrastructure Management: Maintain and optimize communication channels and IT
-                                    systems, including network infrastructure and email servers.</li>
-                                <li>Communication Efficiency: Ensure smooth internal and external communication within
-                                    the bank through effective management of digital platforms.</li>
-                                <li>Technical Support: Provide timely and efficient technical support to bank employees
-                                    and customers, resolving IT-related issues promptly.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="mb-6 pb-4 border-l-4 border-green-300 pl-4 relative flex items-start">
-                        <img src="kib.png" alt="Kuwait International Bank Logo" class="logo">
-                        <div>
-                            <div class="absolute -left-2 top-0 w-4 h-4 bg-green-300 rounded-full"></div>
-                            <h3 class="text-base sm:text-xl font-semibold text-white">UX/UI Designer</h3>
-                            <p class="text-green-400 font-medium text-sm">Kuwait International Bank <span
-                                    class="text-gray-400 text-xs sm:text-sm font-normal">| 04/2021 - 03/2023 |
-                                    Kuwait</span></p>
-                            <ul class="list-disc list-inside mt-2 space-y-1 text-gray-300 ml-4 text-sm">
-                                <li>Led UX/UI design for KIB's new digital banking apps, from concept to final design.
-                                </li>
-                                <li>Created user-centric interfaces, collaborated with cross-functional teams, and
-                                    ensured consistent, modern user experiences across mobile and web platforms.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="text-sm text-gray-400 pt-4 border-t border-gray-700">
-                        <h4 class="font-semibold mb-2 text-white text-base">Previous Experience:</h4>
-                        <ul class="space-y-1 text-xs sm:text-sm">
-                            <li class="flex items-center">
-                                <img src="warba.webp" alt="Warba Bank Logo" class="logo w-8 h-8">
-                                <div>
-                                    <span class="font-semibold text-white">UX/UI Designer</span> at Warba Bank (09/2020
-                                    - 04/2021, Kuwait)
-                                </div>
-                            </li>
-                            <li class="flex items-center">
-                                <img src="warba.webp" alt="Warba Bank Logo" class="logo w-8 h-8">
-                                <div>
-                                    <span class="font-semibold text-white">Frontend Software Developer</span> at Warba
-                                    Bank (05/2019 - 09/2020, Kuwait)
-                                </div>
-                            </li>
-                            <li class="flex items-center">
-                                <img src="acs.png" alt="Adailiya Cooperative Society Logo" class="logo w-8 h-8">
-                                <div>
-                                    <span class="font-semibold text-white">Web Developer</span> at Adailiya Cooperative
-                                    Society (11/2018 - 05/2019, Kuwait)
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section id="skills" class="bg-gray-800 p-6 md:p-8 rounded-xl glassy-card">
-                    <h2
-                        class="text-xl sm:text-2xl font-bold text-white mb-6 border-b pb-2 border-gray-700 text-green-400">
-                        Technical Skills</h2>
-                    <div class="mb-4">
-                        <h3 class="text-base sm:text-lg font-semibold text-white mb-2">Backend & Server Technologies
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full">WebLogic</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full">Windows
-                                Server</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full">Red
-                                Hat Linux</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full">Oracle
-                                Applications</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full">IIS</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full">Apache</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full">NGINX</span>
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <h3 class="text-base sm:text-lg font-semibold text-white mb-2">Security & Maintenance</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-2 text-random-2 text-xs sm:text-sm font-medium rounded-full">Security
-                                Patch Management</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-2 text-random-2 text-xs sm:text-sm font-medium rounded-full">System
-                                Monitoring</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-2 text-random-2 text-xs sm:text-sm font-medium rounded-full">Network
-                                Security</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-2 text-random-2 text-xs sm:text-sm font-medium rounded-full">Data
-                                Privacy Compliance</span>
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <h3 class="text-base sm:text-lg font-semibold text-white mb-2">Technical Support &
-                            Infrastructure</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-3 text-random-3 text-xs sm:text-sm font-medium rounded-full">IT
-                                Support</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-3 text-random-3 text-xs sm:text-sm font-medium rounded-full">Helpdesk
-                                Operations</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-3 text-random-3 text-xs sm:text-sm font-medium rounded-full">Troubleshooting</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-3 text-random-3 text-xs sm:text-sm font-medium rounded-full">System
-                                Upgrades</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-3 text-random-3 text-xs sm:text-sm font-medium rounded-full">Vendor
-                                Coordination</span>
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <h3 class="text-base sm:text-lg font-semibold text-white mb-2">Project & Process Management</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-4 text-random-4 text-xs sm:text-sm font-medium rounded-full">Project
-                                Management</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-4 text-random-4 text-xs sm:text-sm font-medium rounded-full">Agile
-                                & Scrum</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-4 text-random-4 text-xs sm:text-sm font-medium rounded-full">Software
-                                Project Management</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-4 text-random-4 text-xs sm:text-sm font-medium rounded-full">Project
-                                Planning</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-4 text-random-4 text-xs sm:text-sm font-medium rounded-full">Jira</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-4 text-random-4 text-xs sm:text-sm font-medium rounded-full">Confluence</span>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-base sm:text-lg font-semibold text-white mb-2">Web & Software Development</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full">Web
-                                Design</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full">Web
-                                Development</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full">Full
-                                SDLC Understanding</span>
-                            <span
-                                class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full">API
-                                Integration</span>
-                        </div>
-                    </div>
-                </section>
+      <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-8">
+          <section
+            id="experience"
+            class="bg-gray-800 p-6 md:p-8 rounded-xl glassy-card"
+          >
+            <h2
+              class="text-xl sm:text-2xl font-bold text-white mb-6 border-b pb-2 border-gray-700 text-green-400"
+            >
+              Experience
+            </h2>
+            <div
+              class="mb-6 pb-4 border-l-4 border-green-500 pl-4 relative flex items-start"
+            >
+              <img
+                src="kib.png"
+                alt="Kuwait International Bank Logo"
+                class="logo"
+              />
+              <div>
+                <div
+                  class="absolute -left-2 top-0 w-4 h-4 bg-green-500 rounded-full"
+                ></div>
+                <h3 class="text-base sm:text-xl font-semibold text-white">
+                  Assistant Manager - Platform Management
+                </h3>
+                <p class="text-green-400 font-medium text-sm">
+                  Kuwait International Bank
+                  <span class="text-gray-400 text-xs sm:text-sm font-normal"
+                    >| 06/2025 - Present | Kuwait</span
+                  >
+                </p>
+                <ul
+                  class="list-disc list-inside mt-2 space-y-1 text-gray-300 ml-4 text-sm"
+                >
+                  <li>
+                    Oversee daily support for core banking and digital
+                    applications, ensuring system stability and quick resolution
+                    of incidents.
+                  </li>
+                  <li>
+                    Coordinate with vendors and internal teams to manage
+                    upgrades, patches, and production issues.
+                  </li>
+                  <li>
+                    Lead root cause analysis and implement improvements to
+                    reduce recurring issues.
+                  </li>
+                  <li>
+                    Support new system rollouts and changes, ensuring smooth
+                    transitions and minimal business disruption.
+                  </li>
+                  <li>
+                    Prepare performance reports and ensure compliance with ITIL
+                    practices and banking standards.
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            <div class="lg:col-span-1 space-y-8">
-
-                <section id="education" class="bg-gray-800 p-6 md:p-8 rounded-xl glassy-card">
-                    <h2
-                        class="text-xl sm:text-2xl font-bold text-white mb-6 border-b pb-2 border-gray-700 text-green-400">
-                        Education</h2>
-                    <div class="mb-4 flex items-start">
-                        <img src="ku.png" alt="Kuwait University Logo" class="education-logo">
-                        <div>
-                            <h3 class="text-base sm:text-lg font-semibold text-white">Master's degree in Computing
-                                Information System</h3>
-                            <p class="text-green-400 font-medium text-sm">Kuwait University</p>
-                            <p class="text-gray-400 text-xs sm:text-sm mt-1">10/2021 - 12/2025 | Kuwait City, Kuwait</p>
-                        </div>
-                    </div>
-                    <div class="mb-4 flex items-start">
-                        <img src="rit.png" alt="Rochester Institute of Technology Logo" class="education-logo">
-                        <div>
-                            <h3 class="text-base sm:text-lg font-semibold text-white">Bachelor's degree in Software
-                                Engineering</h3>
-                            <p class="text-green-400 font-medium text-sm">Rochester Institute of Technology</p>
-                            <p class="text-gray-400 text-xs sm:text-sm mt-1">08/2013 - 05/2018 | New York, United States
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="certifications" class="bg-gray-800 p-6 md:p-8 rounded-xl glassy-card">
-                    <h2
-                        class="text-xl sm:text-2xl font-bold text-white mb-6 border-b pb-2 border-gray-700 text-green-400">
-                        Certifications</h2>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="p-2 bg-gray-700 rounded-lg flex items-center">
-                            <img src="gust.jpeg" alt="GUST Executive Education Logo" class="cert-logo">
-                            <div>
-                                <p class="font-semibold text-white text-sm">Leadership Across Boundaries: Creating
-                                    Connections, Inspiring Change</p>
-                                <span class="text-xs text-green-400">GUST Executive Education</span>
-                            </div>
-                        </li>
-                        <li class="p-2 bg-gray-700 rounded-lg flex items-center">
-                            <img src="google.jpg" alt="Google Logo" class="cert-logo">
-                            <div>
-                                <p class="font-semibold text-white text-sm">Google IT Support Professional Certificate
-                                </p>
-                                <span class="text-xs text-green-400">Google</span>
-                            </div>
-                        </li>
-                        <li class="p-2 bg-gray-700 rounded-lg flex items-center">
-                            <img src="google.jpg" alt="Google Logo" class="cert-logo">
-                            <div>
-                                <p class="font-semibold text-white text-sm">Digital Transformation with Google Cloud</p>
-                                <span class="text-xs text-green-400">Google</span>
-                            </div>
-                        </li>
-                        <li class="p-2 bg-gray-700 rounded-lg flex items-center">
-                            <img src="ic.jpg" alt="ICAgile Logo" class="cert-logo">
-                            <div>
-                                <p class="font-semibold text-white text-sm">Agile Expert Certificate of Proficiency</p>
-                                <span class="text-xs text-green-400">ICAgile</span>
-                            </div>
-                        </li>
-                        <li class="p-2 bg-gray-700 rounded-lg flex items-center">
-                            <img src="ixdf.jpg" alt="IxDF Logo" class="cert-logo">
-                            <div>
-                                <p class="font-semibold text-white text-sm">Mobile User Experience (UX) Design</p>
-                                <span class="text-xs text-green-400">IxDF - Interaction Design Foundation</span>
-                            </div>
-                        </li>
-                        <li class="p-2 bg-gray-700 rounded-lg flex items-center">
-                            <img src="ixdf.jpg" alt="IxDF Logo" class="cert-logo">
-                            <div>
-                                <p class="font-semibold text-white text-sm">Human-Computer Interaction HCI</p>
-                                <span class="text-xs text-green-400">IxDF - Interaction Design Foundation</span>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <section id="volunteering" class="bg-gray-800 p-6 md:p-8 rounded-xl glassy-card">
-                    <h2
-                        class="text-xl sm:text-2xl font-bold text-white mb-6 border-b pb-2 border-gray-700 text-green-400">
-                        Volunteering</h2>
-                    <div class="mb-4 flex items-start">
-                        <img src="moi.png" alt="MINISTRY OF INTERIOR Logo" class="cert-logo">
-                        <div>
-                            <h3 class="text-base sm:text-lg font-semibold text-white">Covid-19 Volunteer</h3>
-                            <p class="text-green-400 font-medium text-sm">MINISTRY OF INTERIOR (MOI)</p>
-                            <p class="text-gray-400 text-xs sm:text-sm mt-1">03/2020 - 05/2020</p>
-                            <p class="text-gray-300 mt-2 text-sm">Worked in finding the strategy to produce curfew
-                                permits as fast as possible and keep producing them.</p>
-                        </div>
-                    </div>
-                </section>
-
+            <div
+              class="mb-6 pb-4 border-l-4 border-green-500 pl-4 relative flex items-start"
+            >
+              <img src="PAAET.png" alt="PAAET Logo" class="logo" />
+              <div>
+                <div
+                  class="absolute -left-2 top-0 w-4 h-4 bg-green-500 rounded-full"
+                ></div>
+                <h3 class="text-base sm:text-xl font-semibold text-white">
+                  Part-Time Lecturer
+                </h3>
+                <p class="text-green-400 font-medium text-sm">
+                  The Public Authority for Applied Education and Training
+                  <span class="text-gray-400 text-xs sm:text-sm font-normal">
+                    | 09/2025 - 12/2025 | Kuwait</span
+                  >
+                </p>
+                <p class="text-green-400 font-medium text-sm">
+                  Higher Institute for Communications and Navigation
+                  <span class="text-gray-400 text-xs sm:text-sm font-normal">
+                    | Course: Server Operating Systems</span
+                  >
+                </p>
+                <ul
+                  class="list-disc list-inside mt-2 space-y-1 text-gray-300 ml-4 text-sm"
+                >
+                  <li>
+                    Deliver theoretical and practical lectures on Windows Server
+                    2019 administration, file systems, virtualization, and
+                    networking fundamentals.
+                  </li>
+                  <li>
+                    Design and evaluate lab exercises that simulate real-world
+                    IT infrastructure and system management scenarios.
+                  </li>
+                  <li>
+                    Guide students in troubleshooting, configuration, and server
+                    security best practices.
+                  </li>
+                  <li>
+                    Integrate accessibility and inclusive learning methods to
+                    support students with different learning needs.
+                  </li>
+                  <li>
+                    Collaborate with the academic department to align course
+                    content with current industry technologies and
+                    certifications.
+                  </li>
+                </ul>
+              </div>
             </div>
-        </main>
 
-        <footer class="mt-12 text-center text-gray-400 text-xs sm:text-sm p-4 border-t border-gray-700"> &copy; 2025
-            Hussain Mahkareem. Built with HTML, Tailwind CSS, and JS.
-        </footer>
+            <div
+              class="mb-6 pb-4 border-l-4 border-green-300 pl-4 relative flex items-start"
+            >
+              <img
+                src="kib.png"
+                alt="Kuwait International Bank Logo"
+                class="logo"
+              />
+              <div>
+                <div
+                  class="absolute -left-2 top-0 w-4 h-4 bg-green-300 rounded-full"
+                ></div>
+                <h3 class="text-base sm:text-xl font-semibold text-white">
+                  Channel and Support Engineer
+                </h3>
+                <p class="text-green-400 font-medium text-sm">
+                  Kuwait International Bank
+                  <span class="text-gray-400 text-xs sm:text-sm font-normal"
+                    >| 04/2023 - 05/2025 | Kuwait</span
+                  >
+                </p>
+                <ul
+                  class="list-disc list-inside mt-2 space-y-1 text-gray-300 ml-4 text-sm"
+                >
+                  <li>
+                    Infrastructure Management: Maintain and optimize
+                    communication channels and IT systems, including network
+                    infrastructure and email servers.
+                  </li>
+                  <li>
+                    Communication Efficiency: Ensure smooth internal and
+                    external communication within the bank through effective
+                    management of digital platforms.
+                  </li>
+                  <li>
+                    Technical Support: Provide timely and efficient technical
+                    support to bank employees and customers, resolving
+                    IT-related issues promptly.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="mb-6 pb-4 border-l-4 border-green-300 pl-4 relative flex items-start"
+            >
+              <img
+                src="kib.png"
+                alt="Kuwait International Bank Logo"
+                class="logo"
+              />
+              <div>
+                <div
+                  class="absolute -left-2 top-0 w-4 h-4 bg-green-300 rounded-full"
+                ></div>
+                <h3 class="text-base sm:text-xl font-semibold text-white">
+                  UX/UI Designer
+                </h3>
+                <p class="text-green-400 font-medium text-sm">
+                  Kuwait International Bank
+                  <span class="text-gray-400 text-xs sm:text-sm font-normal"
+                    >| 04/2021 - 03/2023 | Kuwait</span
+                  >
+                </p>
+                <ul
+                  class="list-disc list-inside mt-2 space-y-1 text-gray-300 ml-4 text-sm"
+                >
+                  <li>
+                    Led UX/UI design for KIB's new digital banking apps, from
+                    concept to final design.
+                  </li>
+                  <li>
+                    Created user-centric interfaces, collaborated with
+                    cross-functional teams, and ensured consistent, modern user
+                    experiences across mobile and web platforms.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="text-sm text-gray-400 pt-4 border-t border-gray-700">
+              <h4 class="font-semibold mb-2 text-white text-base">
+                Previous Experience:
+              </h4>
+              <ul class="space-y-1 text-xs sm:text-sm">
+                <li class="flex items-center">
+                  <img
+                    src="warba.webp"
+                    alt="Warba Bank Logo"
+                    class="logo w-8 h-8"
+                  />
+                  <div>
+                    <span class="font-semibold text-white">UX/UI Designer</span>
+                    at Warba Bank (09/2020 - 04/2021, Kuwait)
+                  </div>
+                </li>
+                <li class="flex items-center">
+                  <img
+                    src="warba.webp"
+                    alt="Warba Bank Logo"
+                    class="logo w-8 h-8"
+                  />
+                  <div>
+                    <span class="font-semibold text-white"
+                      >Frontend Software Developer</span
+                    >
+                    at Warba Bank (05/2019 - 09/2020, Kuwait)
+                  </div>
+                </li>
+                <li class="flex items-center">
+                  <img
+                    src="acs.png"
+                    alt="Adailiya Cooperative Society Logo"
+                    class="logo w-8 h-8"
+                  />
+                  <div>
+                    <span class="font-semibold text-white">Web Developer</span>
+                    at Adailiya Cooperative Society (11/2018 - 05/2019, Kuwait)
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section
+            id="skills"
+            class="bg-gray-800 p-6 md:p-8 rounded-xl glassy-card"
+          >
+            <h2
+              class="text-xl sm:text-2xl font-bold text-white mb-6 border-b pb-2 border-gray-700 text-green-400"
+            >
+              Technical Skills
+            </h2>
+            <div class="mb-4">
+              <h3 class="text-base sm:text-lg font-semibold text-white mb-2">
+                Backend & Server Technologies
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full"
+                  >WebLogic</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full"
+                  >Windows Server</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full"
+                  >Red Hat Linux</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full"
+                  >Oracle Applications</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full"
+                  >IIS</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full"
+                  >Apache</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full"
+                  >NGINX</span
+                >
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <h3 class="text-base sm:text-lg font-semibold text-white mb-2">
+                Security & Maintenance
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="skill-tag px-3 py-1 bg-random-2 text-random-2 text-xs sm:text-sm font-medium rounded-full"
+                  >Security Patch Management</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-2 text-random-2 text-xs sm:text-sm font-medium rounded-full"
+                  >System Monitoring</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-2 text-random-2 text-xs sm:text-sm font-medium rounded-full"
+                  >Network Security</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-2 text-random-2 text-xs sm:text-sm font-medium rounded-full"
+                  >Data Privacy Compliance</span
+                >
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <h3 class="text-base sm:text-lg font-semibold text-white mb-2">
+                Technical Support & Infrastructure
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="skill-tag px-3 py-1 bg-random-3 text-random-3 text-xs sm:text-sm font-medium rounded-full"
+                  >IT Support</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-3 text-random-3 text-xs sm:text-sm font-medium rounded-full"
+                  >Helpdesk Operations</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-3 text-random-3 text-xs sm:text-sm font-medium rounded-full"
+                  >Troubleshooting</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-3 text-random-3 text-xs sm:text-sm font-medium rounded-full"
+                  >System Upgrades</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-3 text-random-3 text-xs sm:text-sm font-medium rounded-full"
+                  >Vendor Coordination</span
+                >
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <h3 class="text-base sm:text-lg font-semibold text-white mb-2">
+                Project & Process Management
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="skill-tag px-3 py-1 bg-random-4 text-random-4 text-xs sm:text-sm font-medium rounded-full"
+                  >Project Management</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-4 text-random-4 text-xs sm:text-sm font-medium rounded-full"
+                  >Agile & Scrum</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-4 text-random-4 text-xs sm:text-sm font-medium rounded-full"
+                  >Software Project Management</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-4 text-random-4 text-xs sm:text-sm font-medium rounded-full"
+                  >Project Planning</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-4 text-random-4 text-xs sm:text-sm font-medium rounded-full"
+                  >Jira</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-4 text-random-4 text-xs sm:text-sm font-medium rounded-full"
+                  >Confluence</span
+                >
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-base sm:text-lg font-semibold text-white mb-2">
+                Web & Software Development
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full"
+                  >Web Design</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full"
+                  >Web Development</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full"
+                  >Full SDLC Understanding</span
+                >
+                <span
+                  class="skill-tag px-3 py-1 bg-random-1 text-random-1 text-xs sm:text-sm font-medium rounded-full"
+                  >API Integration</span
+                >
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="lg:col-span-1 space-y-8">
+          <section
+            id="education"
+            class="bg-gray-800 p-6 md:p-8 rounded-xl glassy-card"
+          >
+            <h2
+              class="text-xl sm:text-2xl font-bold text-white mb-6 border-b pb-2 border-gray-700 text-green-400"
+            >
+              Education
+            </h2>
+            <div class="mb-4 flex items-start">
+              <img
+                src="ku.png"
+                alt="Kuwait University Logo"
+                class="education-logo"
+              />
+              <div>
+                <h3 class="text-base sm:text-lg font-semibold text-white">
+                  Master's degree in Computing Information System
+                </h3>
+                <p class="text-green-400 font-medium text-sm">
+                  Kuwait University
+                </p>
+                <p class="text-gray-400 text-xs sm:text-sm mt-1">
+                  10/2021 - 12/2025 | Kuwait City, Kuwait
+                </p>
+              </div>
+            </div>
+            <div class="mb-4 flex items-start">
+              <img
+                src="rit.png"
+                alt="Rochester Institute of Technology Logo"
+                class="education-logo"
+              />
+              <div>
+                <h3 class="text-base sm:text-lg font-semibold text-white">
+                  Bachelor's degree in Software Engineering
+                </h3>
+                <p class="text-green-400 font-medium text-sm">
+                  Rochester Institute of Technology
+                </p>
+                <p class="text-gray-400 text-xs sm:text-sm mt-1">
+                  08/2013 - 05/2018 | New York, United States
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="certifications"
+            class="bg-gray-800 p-6 md:p-8 rounded-xl glassy-card"
+          >
+            <h2
+              class="text-xl sm:text-2xl font-bold text-white mb-6 border-b pb-2 border-gray-700 text-green-400"
+            >
+              Certifications
+            </h2>
+            <ul class="space-y-3 text-gray-300">
+              <li class="p-2 bg-gray-700 rounded-lg flex items-center">
+                <img
+                  src="gust.jpeg"
+                  alt="GUST Executive Education Logo"
+                  class="cert-logo"
+                />
+                <div>
+                  <p class="font-semibold text-white text-sm">
+                    Leadership Across Boundaries: Creating Connections,
+                    Inspiring Change
+                  </p>
+                  <span class="text-xs text-green-400"
+                    >GUST Executive Education</span
+                  >
+                </div>
+              </li>
+              <li class="p-2 bg-gray-700 rounded-lg flex items-center">
+                <img src="google.jpg" alt="Google Logo" class="cert-logo" />
+                <div>
+                  <p class="font-semibold text-white text-sm">
+                    Google IT Support Professional Certificate
+                  </p>
+                  <span class="text-xs text-green-400">Google</span>
+                </div>
+              </li>
+              <li class="p-2 bg-gray-700 rounded-lg flex items-center">
+                <img src="google.jpg" alt="Google Logo" class="cert-logo" />
+                <div>
+                  <p class="font-semibold text-white text-sm">
+                    Digital Transformation with Google Cloud
+                  </p>
+                  <span class="text-xs text-green-400">Google</span>
+                </div>
+              </li>
+              <li class="p-2 bg-gray-700 rounded-lg flex items-center">
+                <img src="ic.jpg" alt="ICAgile Logo" class="cert-logo" />
+                <div>
+                  <p class="font-semibold text-white text-sm">
+                    Agile Expert Certificate of Proficiency
+                  </p>
+                  <span class="text-xs text-green-400">ICAgile</span>
+                </div>
+              </li>
+              <li class="p-2 bg-gray-700 rounded-lg flex items-center">
+                <img src="ixdf.jpg" alt="IxDF Logo" class="cert-logo" />
+                <div>
+                  <p class="font-semibold text-white text-sm">
+                    Mobile User Experience (UX) Design
+                  </p>
+                  <span class="text-xs text-green-400"
+                    >IxDF - Interaction Design Foundation</span
+                  >
+                </div>
+              </li>
+              <li class="p-2 bg-gray-700 rounded-lg flex items-center">
+                <img src="ixdf.jpg" alt="IxDF Logo" class="cert-logo" />
+                <div>
+                  <p class="font-semibold text-white text-sm">
+                    Human-Computer Interaction HCI
+                  </p>
+                  <span class="text-xs text-green-400"
+                    >IxDF - Interaction Design Foundation</span
+                  >
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section
+            id="volunteering"
+            class="bg-gray-800 p-6 md:p-8 rounded-xl glassy-card"
+          >
+            <h2
+              class="text-xl sm:text-2xl font-bold text-white mb-6 border-b pb-2 border-gray-700 text-green-400"
+            >
+              Volunteering
+            </h2>
+            <div class="mb-4 flex items-start">
+              <img
+                src="moi.png"
+                alt="MINISTRY OF INTERIOR Logo"
+                class="cert-logo"
+              />
+              <div>
+                <h3 class="text-base sm:text-lg font-semibold text-white">
+                  Covid-19 Volunteer
+                </h3>
+                <p class="text-green-400 font-medium text-sm">
+                  MINISTRY OF INTERIOR (MOI)
+                </p>
+                <p class="text-gray-400 text-xs sm:text-sm mt-1">
+                  03/2020 - 05/2020
+                </p>
+                <p class="text-gray-300 mt-2 text-sm">
+                  Worked in finding the strategy to produce curfew permits as
+                  fast as possible and keep producing them.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer
+        class="mt-12 text-center text-gray-400 text-xs sm:text-sm p-4 border-t border-gray-700"
+      >
+        &copy; 2025 Hussain Mahkareem. Built with HTML, Tailwind CSS, and JS.
+      </footer>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.nav-link');
+      document.addEventListener("DOMContentLoaded", () => {
+        const navLinks = document.querySelectorAll(".nav-link");
 
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    // Prevent default anchor click behavior
-                    e.preventDefault();
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            // Prevent default anchor click behavior
+            e.preventDefault();
 
-                    // Get the target element ID from the href attribute (e.g., #experience)
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
+            // Get the target element ID from the href attribute (e.g., #experience)
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
 
-                    if (targetElement) {
-                        // Use scrollIntoView with smooth behavior
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
+            if (targetElement) {
+              // Use scrollIntoView with smooth behavior
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+              });
 
-                        // Optionally update the URL hash (like the default link behavior)
-                        history.pushState(null, null, targetId);
-                    }
-                });
-            });
+              // Optionally update the URL hash (like the default link behavior)
+              history.pushState(null, null, targetId);
+            }
+          });
         });
+      });
     </script>
-</body>
-
+  </body>
 </html>
