@@ -1109,3 +1109,9 @@ nav .nav-row { height: auto !important; }
   nav .nav-link:hover, nav .nav-link:focus-visible { background: rgba(255,255,255,.06); }
   #top { padding-top: 24px !important; }
 }
+
+/* Larger portrait on desktop and mobile. */
+.profile-photo { width: 200px !important; height: 200px !important; }
+@media (max-width: 640px) {
+  .profile-photo { width: 180px !important; height: 180px !important; }
+}
