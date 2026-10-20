@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Inter:wght@100..900&display=swap");
 
     :root {
       /* Brand */
@@ -1033,3 +1033,79 @@
         0 8px 24px rgba(0, 0, 0, 0.30),
         inset 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
     }
+
+/* Bilingual layout: logical spacing follows the selected reading direction. */
+.nav-row { gap: 1rem; height: auto; min-height: 4rem; flex-wrap: wrap; padding-block: .65rem; }
+.nav-links { gap: 1rem; min-width: 0; flex: 1; padding-block: .4rem; }
+.language-switch { display: flex; gap: .25rem; flex-shrink: 0; padding: .2rem; border: 1px solid var(--accent-border); border-radius: .6rem; background: var(--card); }
+.language-switch button { padding: .4rem .65rem; border-radius: .4rem; color: var(--text-soft); font: inherit; cursor: pointer; min-height: 44px; }
+.language-switch button[aria-pressed="true"] { background: var(--primary); color: #07121b; font-weight: 700; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--primary-hover); outline-offset: 4px; }
+.logo, .education-logo, .cert-logo { margin-right: 0 !important; margin-inline-end: 1rem !important; }
+.experience-item { padding-left: 0; padding-inline-start: 1rem; border-left: 0; border-inline-start: 2px solid rgba(45,212,191,.28); }
+.experience-dot { left: auto; inset-inline-start: -7px; }
+.experience-item ul { margin-left: 0 !important; margin-inline-start: 1.25rem !important; }
+.education-item > div, .experience-item > div, .project-item > div, .header-row > div { min-width: 0; }
+a[href^="mailto:"], a[href^="tel:"] { unicode-bidi: isolate; display: inline-block; overflow-wrap: anywhere; }
+[data-i18n] { unicode-bidi: isolate; }
+html[lang="ar"] body { font-family: "Alexandria", Tahoma, Arial, sans-serif; }
+html[lang="ar"] .profile-title, html[lang="ar"] p, html[lang="ar"] li { line-height: 1.9; }
+html[lang="ar"] .skill-tag { letter-spacing: normal; }
+.skill-tag { unicode-bidi: isolate; }
+@media (max-width: 640px) {
+  .nav-links { order: 3; flex-basis: 100%; }
+  .nav-row { gap: .35rem 1rem; }
+  .logo, .education-logo, .cert-logo { margin-inline-end: 12px !important; }
+  .experience-item { padding-inline-start: 12px; }
+  .experience-item ul { margin-inline-start: 1rem !important; }
+  section { scroll-margin-top: 145px; }
+  html[lang="ar"] .profile-name { line-height: 1.5 !important; }
+}
+@media print { .experience-item { border-inline-start-color: #14b8a6 !important; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* Separate previous job titles from their employer in both languages. */
+.previous-experience .font-semibold { margin-inline-end: .35em; }
+
+
+/* Mobile navigation has two explicit rows so utility styles cannot clip it. */
+nav .nav-row { height: auto !important; }
+@media screen and (max-width: 640px) {
+  nav .nav-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: .5rem .75rem;
+    padding-block: .65rem;
+  }
+  nav .nav-row > a { grid-column: 1; grid-row: 1; justify-self: start; }
+  nav .language-switch { grid-column: 2; grid-row: 1; }
+  nav .nav-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .25rem;
+    width: 100%;
+    padding-block: .25rem;
+    overflow: visible;
+    white-space: normal;
+  }
+  nav .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: .35rem .15rem;
+    font-size: .75rem;
+    line-height: 1.5;
+    text-align: center;
+    border-radius: .4rem;
+  }
+  nav .nav-link:hover, nav .nav-link:focus-visible { background: rgba(255,255,255,.06); }
+  #top { padding-top: 24px !important; }
+}
